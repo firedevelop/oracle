@@ -1,0 +1,9 @@
+DECLARE
+V_NUM1 NUMBER := 10;
+
+BEGIN
+
+END IF;
+
+END;
+/A1

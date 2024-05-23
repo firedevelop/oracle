@@ -1,0 +1,11 @@
+
+	{
+		"Print Message (DBMS_OUTPUT)": {
+			"prefix": "DP",
+			"body": [
+				"DBMS_OUTPUT.PUT_LINE('$1');"
+			],
+			"description": "Print a message using DBMS_OUTPUT.PUT_LINE."
+		}
+	}
+	
