@@ -4,5 +4,38 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default",
+					"enableSsl": "Disabled"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"driver": "MySQL",
+				"name": "root",
+				"database": "contacts",
+				"username": "root"
+			},
+			{
+				"oracleOptions": {
+					"privilege": "SYSDBA",
+					"thickMode": false,
+					"autoCommit": false,
+					"lowerCase": false,
+					"limitPrefetchRows": false
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 1521,
+				"driver": "Oracle",
+				"name": "SYSDBA",
+				"database": "a",
+				"username": "sys",
+				"password": "oracle"
+			}
+		]
+	}
 }

@@ -1,7 +1,19 @@
-|| operdor de concatenación
+Sample Models and Scripts
 
-DBMS_OUTPUT.PUT_LINE is a procedure used to send messages to the console
+https://livesql.oracle.com/apex/f?p=590:1000::::::
 
- "/" at the end of a line indicates the end of a statement. 
- 
-  
+https://devgym.oracle.com/pls/apex/f?p=10001:20011::::20011::
+
+https://github.com/oracle-samples
+
+https://github.com/oracle-samples/db-sample-schemas?tab=readme-ov-file
+
+https://github.com/oracle-samples/oracle-db-examples
+
+https://www.oracle.com/database/technologies/appdev/datamodeler-samples.html
+
+Download SQL Plus:
+https://www.oracle.com/es/database/technologies/instant-client/winx64-64-downloads.html66
+
+Download Oracle Databse EXPRESS
+https://www.oracle.com/database/technologies/xe-downloads.html
