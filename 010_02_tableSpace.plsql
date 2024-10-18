@@ -15,3 +15,6 @@ select file_name, bytes /1024 /1024 from dba_data_files;
 create table a2 (ID int primary key, Name varchar2(25)) tablespace tbs1;
 -- Check database and tablespace used
 FROM dba_data_files;
+
+-- remove complete
+DROP TABLESPACE tbs6 INCLUDING CONTENTS AND DATAFILES;

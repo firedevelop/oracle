@@ -1,11 +1,15 @@
-/*Codigo para empezar de nuevo todo
+-- 0. DESCRIPTION
+-- User input postal code using a promt and get the total numbers of teacher on these city, include small validation.
+-- Issues: if input is bigger than 10 = outbound exception
+
+-- 1. CLEAN OLD DATA
+------------------------------------
 DROP TABLE profesor_sede;
 DROP TABLE profesores;
 DROP TABLE ciudad_sede;
-*/
 
------------------------------------
--- CREACI�N DE TABLAS
+
+-- 2. CREATE TABLES
 ------------------------------------
 CREATE TABLE profesores (
     dni       VARCHAR(9) PRIMARY KEY,
@@ -33,8 +37,8 @@ CREATE TABLE profesor_sede (
     PRIMARY KEY (profesor_dni, sede_cp, fecha)
 );
 
-------------------------------------
--- INSERTAR DATOS
+
+-- 3. INSERT FAKE DATA
 ------------------------------------
 select * from profesores;
 select * from ciudad_sede;
@@ -69,8 +73,8 @@ INSERT INTO profesor_sede VALUES ('58568652A', '46001', TO_DATE('18/01/2024', 'D
 INSERT INTO profesor_sede VALUES ('58568652A', '46001', TO_DATE('19/01/2024', 'DD/MM/YYYY'), 8 );
 
 
-------------------------------------
--- SELECCIONAR DATOS
+
+-- 4. CREATE A VIEW
 ------------------------------------
 -- Seleccionar todos los profesores y sus sedes correspondiente:
 SELECT * FROM profesores;
@@ -97,37 +101,37 @@ CREATE OR REPLACE VIEW v_ciudad_sede_mas_millon AS
         habitantes > 1000000;
 
 SELECT * FROM v_ciudad_sede_mas_millon;
--------------------------------------------------
--- BLOQUE ANONIMO - EXCEPCIONES
--------------------------------------------------
--- Se utiliza para habilitar la salida del servidor para mostrar mensajes y resultados en la ventana de salida del servidor.
-SET SERVEROUTPUT ON;
 
--- Bloque an�nimo PL/SQL bloque an�nimo que toma un c�digo postal (Barcelona) y cuenta el n�mero de profesores en la sede correspondiente a ese c�digo postal, 
+
+
+-- 5. BLOQUE ANONIMO
+-------------------------------------------------
+SET SERVEROUTPUT ON;
 DECLARE
--- Declaraci�n de variables
-    v_codigo_postal VARCHAR2(5) := '&codigopostal'; --'08001'; Sin comillas es para numeros
+    v_codigo_postal VARCHAR2(10);
     v_numero_profesores NUMBER;
     v_nombre_sede VARCHAR2(60);
 BEGIN
+    v_codigo_postal := '&codigopostal';
 
-    -- Utilizamos una consulta para contar el n�mero de profesores en la sede.
+    IF LENGTH(v_codigo_postal) <> 5 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'El código postal debe tener exactamente 5 caracteres.');
+    END IF;
+
     SELECT COUNT(*) INTO v_numero_profesores
     FROM profesor_sede
     WHERE sede_cp = v_codigo_postal;
 
-    -- Consulta para obtener el nombre de la sede.
     SELECT nombre INTO v_nombre_sede
     FROM ciudad_sede
     WHERE cod_post = v_codigo_postal;
 
-    -- Mostramos el resultado. concatenar con || 
-    DBMS_OUTPUT.PUT_LINE('La sede con c�digo postal ' || v_codigo_postal || ' (' || v_nombre_sede || ') tiene ' || v_numero_profesores || ' profesor(s).');
+    DBMS_OUTPUT.PUT_LINE('La sede con código postal ' || v_codigo_postal || ' (' || v_nombre_sede || ') tiene ' || v_numero_profesores || ' profesor(es).');
+
 EXCEPTION
--- Control de errores
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontraron profesores para el c�digo postal ' || v_codigo_postal || '.');
+        DBMS_OUTPUT.PUT_LINE('No se encontraron profesores para el código postal ' || v_codigo_postal || '.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Ocurri� un error: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Ocurrió un error: ' || SQLERRM);
 END;
 /

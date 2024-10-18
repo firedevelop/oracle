@@ -82,7 +82,10 @@ select * from user1.table1;
 
 
 CONNECT user1/oracle@localhost:1521/XEPDB1;
-GRANT SELECT, INSERT, UPDATE, DELETE ON table1 TO SYSOPER;
+GRANT SELECT, INSERT, UPDATE, DELETE ON table1 TO SYSOPER;    
+GRANT UNLIMITED TABLESPACE TO user1;
+grant all on user1.autor on user1;
 
-
+--remove table
+drop table autor cascade constraints;
 

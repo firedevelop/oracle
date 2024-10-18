@@ -1,0 +1,50 @@
+/* INDEX:
+    0. CLEAN DATA
+    1. USER
+    2. ROLES
+    3. PROFILE
+*/
+
+
+/* 0. CLEAN DATA */
+DROP USER u CASCADE;
+
+DROP ROLE ver_tablas;
+
+DROP PROFILE conectarse_1minuto CASCADE;
+
+/* 1. USER 
+_ORACLE_SCRIPT allow ignore c## when create user */
+CREATE USER c##u IDENTIFIED BY oracle;
+
+DROP USER c##u CASCADE;
+
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
+CREATE USER u IDENTIFIED BY oracle;
+
+ALTER USER u IDENTIFIED BY oracle;
+
+DROP USER u CASCADE;
+
+GRANT CREATE SESSION TO u;
+
+GRANT ALL PRIVILEGES TO u;
+
+REVOKE ALL PRIVILEGES FROM u;
+
+/* 2. ROLES */
+CREATE ROLE ver_tablas;
+
+DROP ROLE ver_tablas;
+
+GRANT SELECT ANY TABLE TO ver_tablas;
+
+GRANT ver_tablas TO a1;
+
+/* 2. PROFILE */
+CREATE PROFILE conectarse_1minuto LIMIT CONNECT_TIME 1;
+
+DROP PROFILE conectarse_1minuto;
+
+ALTER USER a1 PROFILE conectarse_1minuto;
