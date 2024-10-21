@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios PL/SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "•";
+            color: #007BFF;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+        }
+        .exercise {
+            margin-bottom: 20px;
+        }
+        .extra {
+            color: #FF4500;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicios PL/SQL</h1>
+    <p>Batería de ejercicios de PL/SQL que cubren diferentes aspectos de la programación PL/SQL.</p>
+    <ul>
+        <li>Cada ejercicio incluye una descripción y comentarios explicativos.</li>
+        <li>Los ejercicios están organizados en tres niveles de dificultad: Básico, Medio y Alto.</li>
+        <li>Estos ejercicios cubren una variedad de conceptos en PL/SQL, desde lo básico hasta lo avanzado.</li>
+        <li>Puedes utilizarlos para practicar y mejorar tus habilidades en PL/SQL a medida que avanzas en tu aprendizaje.</li>
+    </ul>
+    <p><strong>El código con las soluciones se publicará en un documento aparte.</strong></p>
+
+    <h2>Ejercicios para Practicar</h2>
+    <ul>
+        <li><a href="#ejercicio0">Repaso DDL y DML</a></li>
+        <li><a href="#nivelBasico">Nivel Básico</a></li>
+        <li><a href="#nivelMedio">Nivel Medio</a></li>
+        <li><a href="#nivelAlto">Nivel Alto</a></li>
+        <li><a href="#extra">Extra</a></li>
+    </ul>
+
+    <h2 id="ejercicio0">Repaso DDL y DML</h2>
+    <div class="exercise">
+        <h3>Ejercicio 0 – Crear tabla empleados y añadir registros</h3>
+        <p>Crea una tabla llamada <strong>"empleados"</strong> con los siguientes campos:</p>
+        <ul>
+            <li>empleado_id (Número entero, clave primaria)</li>
+            <li>nombre (Cadena de caracteres de hasta 50 caracteres)</li>
+            <li>depto (Cadena de caracteres de hasta 50 caracteres)</li>
+            <li>salario (Número decimal con 10 dígitos en total y 2 decimales)</li>
+        </ul>
+        <p>Inserta los siguientes registros de ejemplo en la tabla <strong>"empleados"</strong>:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Departamento</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Empleado1</td>
+                    <td>DepartamentoA</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Empleado2</td>
+                    <td>DepartamentoB</td>
+                    <td>2992.50</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Empleado3</td>
+                    <td>DepartamentoA</td>
+                    <td>1500.55</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Empleado4</td>
+                    <td>DepartamentoA</td>
+                    <td>1500.75</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 id="nivelBasico">Nivel Básico</h2>
+    <div class="exercise">
+        <h3>Ejercicio 1 - Bloque Anónimo Simple</h3>
+        <p>Escribe un bloque anónimo PL/SQL que declare una variable y la inicialice con un valor. Luego, muestra el valor de la variable.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 2 - Operadores Aritméticos</h3>
+        <p>Escribe un bloque anónimo PL/SQL que use operadores aritméticos para realizar una serie de cálculos simples (suma, resta, multiplicación y división) e imprima los resultados.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 3 - Condicionales IF</h3>
+        <p>Escribe un bloque anónimo PL/SQL que utilice una declaración condicional IF para determinar si un número es positivo, negativo o cero y mostrar un mensaje en consecuencia.</p>
+    </div>
+
+    <h2 id="nivelMedio">Nivel Medio</h2>
+    <div class="exercise">
+        <h3>Ejercicio 4 - Bucle FOR</h3>
+        <p>Escribe un bloque anónimo PL/SQL que use un bucle FOR para mostrar los números del 1 al 10.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 5 - Procedimiento Simple</h3>
+        <p>Crea un procedimiento PL/SQL que acepte dos números como parámetros y devuelva la suma de esos números.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 6 - Cursor Simple</h3>
+        <p>Escribe un bloque anónimo PL/SQL que utilice un cursor para recorrer una tabla y mostrar los nombres de los empleados.</p>
+    </div>
+
+    <h2 id="nivelAlto">Nivel Alto</h2>
+    <div class="exercise">
+        <h3>Ejercicio 7 - Excepciones Personalizadas</h3>
+        <p>Crea una excepción personalizada llamada <strong>mi_excepcion</strong> y escribe un bloque anónimo PL/SQL que la levante y maneje.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 8 - Procedimiento con Manejo de Excepciones</h3>
+        <p>Crea un procedimiento <strong>"obtener_info_empleado"</strong> PL/SQL que acepte un número de empleado como parámetro y utilice un cursor para obtener información sobre ese empleado. Si el empleado no existe, levanta una excepción personalizada.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 9 - Función con Excepción Personalizada y Cursor</h3>
+        <p>Crea una función PL/SQL <strong>"salario_empleado"</strong> que acepte un número de empleado como parámetro y devuelva el salario de ese empleado. Si el empleado no existe, levanta una excepción personalizada.</p>
+    </div>
+    <div class="exercise">
+        <h3>Ejercicio 10 - Trigger</h3>
+        <p>Crea un trigger PL/SQL <strong>"before_insert_empleado_trigger"</strong> que se active antes de insertar un nuevo registro en una tabla e imprima un mensaje que indique el valor que se está insertando.</p>
+    </div>
+
+    <h2 id="extra">Extra</h2>
+    <div class="extra">
+        <h3>Ejercicio 8a – Comprobar el procedimiento</h3>
+        <p>Crea un bloque anónimo para comprobar que funciona el procedimiento.</p>
+    </div>
+    <div class="extra">
+        <h3>Ejercicio 9a – Comprobar la función</h3>
+        <p>Crea un bloque anónimo para comprobar que funciona la función.</p>
+    </div>
+    <div class="extra">
+        <h3>Ejercicio 10a – Comprobar el trigger</h3>
+        <p>Crea un bloque anónimo para comprobar que funciona el trigger:</p>
+        <ul>
+            <li>Primero elimina el empleado 5 de la tabla <strong>empleados</strong>.</li>
+            <li>Luego inserta un nuevo registro en la tabla <strong>"empleados"</strong>: <code>5, 'NuevoEmpleado', 'DepartamentoC', 70000</code>.</li>
+            <li>Observa la salida del trigger.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

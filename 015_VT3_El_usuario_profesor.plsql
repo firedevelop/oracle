@@ -11,6 +11,7 @@ CREATE USER Profesor_DAX_M02B IDENTIFIED BY p1234;
 -- Asignar privilegio para seleccionar y actualizar en la vista NOTAS_ALUMNOS_DAX_M02B
 GRANT SELECT, UPDATE ON ONLINER.NOTAS_ALUMNOS_DAX_M02B TO Profesor_DAX_M02B;
 
+
 -- Crear un nuevo rol de profesor "Rol_profe"
 CREATE ROLE Rol_profe;
 
