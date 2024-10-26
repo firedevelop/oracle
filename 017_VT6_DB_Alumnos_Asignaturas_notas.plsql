@@ -9,6 +9,10 @@
 --DROP TABLE asignaturas;
 
 -- Crear tabla alumno.
+drop table notas;
+drop table alumnos;
+drop table asignaturas;
+
 CREATE TABLE alumnos (
     id_alumno        INT PRIMARY KEY,
     nombre_completo  VARCHAR(100) NOT NULL,

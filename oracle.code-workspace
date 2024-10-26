@@ -36,6 +36,10 @@
 				"username": "sys",
 				"password": "oracle"
 			}
-		]
+		],
+		"editor.tokenColorCustomizations": {
+			"comments": "",
+			"textMateRules": []
+		}
 	}
 }
