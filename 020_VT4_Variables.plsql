@@ -24,6 +24,7 @@ DECLARE
     v_promedio FLOAT;
     v_contador INT := 0;
     v_suma_promedios FLOAT := 0; 
+    v_promedio_global FLOAT; -- no es necesario inicializarlo, pues su valor inicial no afecta el resultado. 
     CURSOR c IS SELECT
         a.codigo_asig,
         a.nombre,
@@ -51,7 +52,8 @@ BEGIN
         v_contador := v_contador + 1;
         v_suma_promedios := v_suma_promedios + v_promedio;
 
-        INSERT INTO promedio_asignatura VALUES (v_codigo_asig, v_nombre_asig, v_promedio);  -- Descomentar esta línea para la inserción
+        INSERT INTO promedio_asignatura VALUES (
+            v_codigo_asig, v_nombre_asig, v_promedio);  -- Descomentar esta línea para la inserción
     END LOOP;
     
     v_promedio_global := ROUND(
