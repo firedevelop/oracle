@@ -24,7 +24,6 @@ DECLARE
     v_promedio FLOAT;
     v_contador INT := 0;
     v_suma_promedios FLOAT := 0; 
-    v_promedio_global FLOAT;
     CURSOR c IS SELECT
         a.codigo_asig,
         a.nombre,
@@ -55,7 +54,8 @@ BEGIN
         INSERT INTO promedio_asignatura VALUES (v_codigo_asig, v_nombre_asig, v_promedio);  -- Descomentar esta línea para la inserción
     END LOOP;
     
-    v_promedio_global := ROUND(v_suma_promedios / v_contador, 2);
+    v_promedio_global := ROUND(
+        v_suma_promedios / v_contador, 2);
     DBMS_OUTPUT.PUT_LINE('Promedio Global: '
                          || v_promedio_global);
 
