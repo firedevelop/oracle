@@ -2,6 +2,7 @@
 ------------------------------------
 /*  SET AUTOCOMMIT OFF; -- you cannot use ROLLBACK
     SET AUTOCOMMIT ON;  -- you can use ROLLBACK
+    autocommit onmediate means autocommit on
 
     COMMIT = after commit ROLLBACK doesn't apply changes.
 

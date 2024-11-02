@@ -44,7 +44,6 @@ BEGIN
                                  || promedio_asig);
         END IF;
     END LOOP;
- 
 
     -- Cierra el cursor una vez que se han procesado todas las filas.
     CLOSE cursor_asignaturas;

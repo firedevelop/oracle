@@ -80,14 +80,14 @@ INSERT INTO profesor_sede VALUES ('58568652A', '46001', TO_DATE('19/01/2024', 'D
 SELECT * FROM profesores;
 
 SELECT
-    cl.dni,
-    cl.nombre  AS nombre_profesor,
-    cl.email,
-    ci.nombre AS nombre_sede
+    p.dni,
+    p.nombre  AS nombre_profesor,
+    p.email,
+    cs.nombre AS nombre_sede
 FROM
-         profesores cl
-    INNER JOIN profesor_sede cc ON cl.dni = cc.profesor_dni
-    INNER JOIN ciudad_sede ci ON cc.sede_cp = ci.cod_post;
+         profesores p
+    INNER JOIN profesor_sede ps ON p.dni = ps.profesor_dni
+    INNER JOIN ciudad_sede cs ON cc.sede_cp = cs.cod_post;
 
 -- Crear vista de ciudad_sede con m�s de un mill�n de habitantes:
 CREATE OR REPLACE VIEW v_ciudad_sede_mas_millon AS
@@ -126,7 +126,10 @@ BEGIN
     FROM ciudad_sede
     WHERE cod_post = v_codigo_postal;
 
-    DBMS_OUTPUT.PUT_LINE('La sede con código postal ' || v_codigo_postal || ' (' || v_nombre_sede || ') tiene ' || v_numero_profesores || ' profesor(es).');
+    DBMS_OUTPUT.PUT_LINE(
+        'La sede con código postal ' || 
+        v_codigo_postal || 
+        ' (' || v_nombre_sede || ') tiene ' || v_numero_profesores || ' profesor(es).');
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
