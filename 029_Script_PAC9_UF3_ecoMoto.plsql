@@ -30,37 +30,36 @@ CREATE TABLE ecoAlquileres (
     FOREIGN KEY (Dni) REFERENCES ecoClientes(Dni),
     FOREIGN KEY (Matricula) REFERENCES ecoMotos(Matricula)
 );
-
--- Insertar 10 registros en la tabla ecoClientes
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('12345678A', 'Juan', 'PÈrez');
+VALUES ('12345678A', 'Juan', 'P√©rez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('87654321B', 'MarÌa', 'Gonz·lez');
+VALUES ('87654321B', 'Mar√≠a', 'Gonz√°lez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('11223344C', 'Carlos', 'LÛpez');
+VALUES ('11223344C', 'Carlos', ' L√≥pez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('33445566D', 'Laura', 'Fern·ndez');
+VALUES ('33445566D', 'Laura', 'Fern√°ndez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('99887766E', 'Ana', 'MartÌnez');
+VALUES ('99887766E', 'Ana', 'Mart√≠nez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('44556677F', 'David', 'RamÌrez');
+VALUES ('44556677F', 'David', 'Ram√≠rez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('55667788G', 'SofÌa', 'S·nchez');
+VALUES ('55667788G', 'Sof√≠a', 'S√°nchez');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('66778899H', 'Miguel', 'GarcÌa');
+VALUES ('66778899H', 'Miguel', ' Garc√≠a');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('77889900I', 'LucÌa', 'Morales');
+VALUES ('77889900I', 'Luc√≠a', 'Morales');
 
 INSERT INTO ecoClientes (Dni, Nombre, Apellido)
-VALUES ('88990011J', 'JosÈ', 'Ruiz');
+VALUES ('88990011J', 'Jos√©', 'Ruiz');
+
 
 
 
