@@ -26,9 +26,9 @@ END;
 
 ----------- 2. FUNCION
 CREATE OR REPLACE FUNCTION categoria_cliente (dni_cliente IN VARCHAR2)
-RETURN VARCHAR2
+RETURN VARCHAR2 -- Especifica el tipo de retorno de la función.
 IS
-    v_nombre ecoClientes.Nombre%TYPE;
+    v_nombre ecoClientes.nombre%TYPE;
     v_ecoPuntos ecoClientes.ecoPuntos%TYPE;
     v_categoria VARCHAR2(50);
     
@@ -54,7 +54,7 @@ BEGIN
                         || v_categoria 
                         || '.');
 
-    RETURN v_categoria;
+    RETURN v_categoria; -- Devuelve el valor calculado por la función.
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
@@ -63,13 +63,13 @@ EXCEPTION
     WHEN OTHERS THEN
         -- otro error
         RAISE_APPLICATION_ERROR(-20002, 'Se ha producido un error inesperado en la categoría del cliente: ' || SQLERRM);
-END categoria_cliente;
+END categoria_cliente; -- nombre función, no obligatorio pero buena practica
 /
 
 
 ----------- 3. LLAMADA A FUNCION
 DECLARE
-    v_categoria VARCHAR2(50);
+    v_categoria VARCHAR2(9);
 BEGIN
     v_categoria := categoria_cliente('12345678A');
     v_categoria := categoria_cliente('88990011J');    
