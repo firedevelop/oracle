@@ -1,3 +1,6 @@
+EXERCISES TO STUDY:
+029_PAC09_*
+
 Sample Models and Scripts
 
 https://livesql.oracle.com/apex/f?p=590:1000::::::
