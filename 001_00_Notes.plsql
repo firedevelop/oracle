@@ -1,5 +1,6 @@
 EXERCISES TO STUDY:
 029_PAC09_*
+023_VT4_Numero_Primo.plsql
 
 Sample Models and Scripts
 
